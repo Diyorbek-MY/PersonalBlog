@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Home - Diyorbek's Blog{% endblock %}
+
+{% block content %}
+    <h1>Welcome to Diyorbek's Blog</h1>
+    <p>This is the homepage.</p>
+
+    {% for post in posts %}
+        <div class="post">
+            <h2><a href="{% url 'post_detail' post.id %}">{{ post.title }}</a></h2>
+            <p>{{ post.content|truncatewords:20 }}</p>
+            <small>Published on: {{ post.created_at }}</small>
+            <a href="{% url 'post_detail' post.id %}">Read more</a>
+            <hr>
+        </div>
+    {% empty %}
+        <p>No posts yet.</p>
+    {% endfor %}
+{% endblock %}
