@@ -9,4 +9,4 @@ A simple Django-based blogging platform where users can create, read, and manage
 - Uses SQLite as the database
 
 ##License
-This project is licensed under the MIT License.
+- This project is licensed under the MIT License.
